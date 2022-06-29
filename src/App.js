@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
+import ReactLoader from './components/loader';
+import UserContext from './context/user';
+import useAuthListener from './hooks/use-auth-listener';
 
-function App() {
+const Login = lazy(() => import('./pages/login'));
+
+
+export default function App() {
+  const { user } = useAuthListener();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{ user }}>
+      <Router>
+        <Suspense fallback={<ReactLoader />}>
+          <Routes >
+            <Route path={'/login'} component={Login} />            
+         
+          </Routes >
+        </Suspense>
+      </Router>
+    </UserContext.Provider>
   );
 }
-
-export default App;
