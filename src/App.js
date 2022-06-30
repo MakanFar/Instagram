@@ -1,10 +1,10 @@
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import ReactLoader from './components/loader';
 import UserContext from './context/user';
 import useAuthListener from './hooks/use-auth-listener';
+import Login from "./pages/login"
 
-const Login = lazy(() => import('./pages/login'));
 
 
 export default function App() {
@@ -15,8 +15,7 @@ export default function App() {
       <Router>
         <Suspense fallback={<ReactLoader />}>
           <Routes >
-            <Route path={'/login'} component={Login} />            
-         
+            <Route path="/login" element={<Login />} />          
           </Routes >
         </Suspense>
       </Router>

@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 
+require('dotenv').config()
+console.log(process.env)
+
 export default function Login() {
   const history = useNavigate();
   const { firebase } = useContext(FirebaseContext);
