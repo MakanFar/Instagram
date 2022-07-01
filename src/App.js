@@ -4,6 +4,7 @@ import ReactLoader from './components/loader';
 import UserContext from './context/user';
 import useAuthListener from './hooks/use-auth-listener';
 import Login from "./pages/login"
+import Signup from "./pages/signup"
 
 
 
@@ -15,7 +16,8 @@ export default function App() {
       <Router>
         <Suspense fallback={<ReactLoader />}>
           <Routes >
-            <Route path="/login" element={<Login />} />          
+            <Route path="/login" element={<Login />} />     
+            <Route path="/signup" element={<Signup />} />       
           </Routes >
         </Suspense>
       </Router>

@@ -6,7 +6,7 @@ require('dotenv').config()
 console.log(process.env)
 
 export default function Login() {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const { firebase } = useContext(FirebaseContext);
 
   const [emailAddress, setEmailAddress] = useState('');
@@ -20,7 +20,7 @@ export default function Login() {
 
     try {
       await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
-      history.push('/login');
+      navigate(`/`);
     } catch (error) {
       setEmailAddress('');
       setPassword('');
@@ -75,7 +75,7 @@ export default function Login() {
         <div className="flex justify-center items-center flex-col w-full bg-white p-4 rounded border border-gray-primary">
           <p className="text-sm">
             Don't have an account?{` `}
-            <Link to={'/login'} className="font-bold text-blue-medium">
+            <Link to={'/signup'} className="font-bold text-blue-medium">
               Sign up
             </Link>
           </p>
