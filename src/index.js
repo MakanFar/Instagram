@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import FirebaseContext from './context/firebase';
-import { firebase, FieldValue } from './firebaseconfig';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./components/app";
+import { AuthProvider } from "./context/AuthContext";
+import { AnimatePresence } from "framer-motion";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <FirebaseContext.Provider value={{ firebase, FieldValue }}>
-    <App />
-  </FirebaseContext.Provider>,
+  <AuthProvider>
+    <AnimatePresence>
+      <App />
+    </AnimatePresence>
+  </AuthProvider>
 );
-
-
+reportWebVitals();
