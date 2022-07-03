@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Footer from "../components/footer";
 
 // icons
 import { ImFacebook2 as FacebookIcon } from "react-icons/im";
@@ -28,7 +27,12 @@ const Signup = () => {
 
   const { user, signUp } = useContext(AuthContext);
 
-  if (user) navigate("/");
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+},[user, navigate])
+  
 
   const showError = (error) => {
     setErrorMsg(error);
@@ -219,7 +223,7 @@ const Signup = () => {
               <p className="text-sm ">Get the app</p>
               <a
                 target="_blank"
-                href="https://github.com/theviralboy/instagram-firebase"
+                href="https://github.com/MakanFar/Instagram"
                 className="text-sm"
               >
                 <img src="/images/get-it-on-github.png" className="h-16" />

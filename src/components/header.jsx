@@ -37,7 +37,7 @@ import { signOut } from "firebase/auth";
 import { ReelFillIcon } from "../constants/icons";
 
 const Header = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [modelOpen, setModelOpen] = useState(false);
   const [percentage, setPercentage] = useState(0);
   const [caption, setCaption] = useState("");

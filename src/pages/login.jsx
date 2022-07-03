@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Footer from "../components/footer";
 
 // icons
 import { ImFacebook2 as FacebookIcon } from "react-icons/im";
@@ -24,7 +23,11 @@ const Login = () => {
 
   const { user, login } = useContext(AuthContext);
 
-  if (user) navigate("/");
+  useEffect(() => {
+    if (user) {
+      navigate('/');
+    }
+},[user, navigate])
 
   const showError = (error) => {
     setErrorMsg(error);
@@ -170,7 +173,7 @@ const Login = () => {
             <div className="flex flex-col items-center justify-center rounded w-full border-[1px] border-gray-300 mt-4 bg-white p-6">
               <div className="text-sm">
                 Don't have an account?{" "}
-                <Link to="/register" className="text-blue-500 font-semibold">
+                <Link to="/signup" className="text-blue-500 font-semibold">
                   Sign up
                 </Link>
               </div>
@@ -180,7 +183,7 @@ const Login = () => {
               <p className="text-sm ">Get the app</p>
               <a
                 target="_blank"
-                href="https://github.com/theviralboy/instagram-firebase"
+                href="https://github.com/MakanFar/Instagram"
                 className="text-sm"
               >
                 <img src="/images/get-it-on-github.png" className="h-16" />
