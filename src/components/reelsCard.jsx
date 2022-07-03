@@ -230,7 +230,7 @@ const ReelsVideoCard = ({ video }) => {
               <div className="flex gap-2 items-center">
                 <img
                   src={
-                    "https://avatars.githubusercontent.com/u/83828231?s=40&v=4"
+                    "https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png"
                   }
                   loading="lazy"
                   alt={user?.displayName}
