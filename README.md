@@ -1,4 +1,4 @@
-# Instagram clone from Scratch 
+# Instagram clone 
 
 ## 🔗 Live Website
 
