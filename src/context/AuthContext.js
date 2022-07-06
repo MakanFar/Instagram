@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
   arrayUnion,
   doc,
@@ -13,8 +13,12 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import PropTypes from 'prop-types';
+
 
 const AuthContext = createContext();
+
+
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -113,5 +117,11 @@ const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+  };
+
 
 export { AuthContext, AuthProvider };

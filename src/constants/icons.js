@@ -1,9 +1,11 @@
+import React from 'react';
+
+
 export const ReelIcon = (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 122.14 122.88"
       xmlSpace="preserve"
-      // size={20}
       width="17px"
       height="17px"
       {...props}
