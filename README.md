@@ -1,8 +1,8 @@
-# Instagram clone 
+# Instagram clone [![ESLint](https://github.com/MakanFar/Instagram/actions/workflows/eslint.yml/badge.svg)](https://github.com/MakanFar/Instagram/actions/workflows/eslint.yml)
 
 ## 🔗 Live Website
 [Instagram clone live](https://instagram-clone-2022.herokuapp.com/)
-
+Cancel changes
 ## 👀 Overview
 ![Overview](/screenshots/sample.gif)
 
