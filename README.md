@@ -2,7 +2,7 @@
 
 ## 🔗 Live Website
 [Instagram clone live](https://instagram-clone-2022.herokuapp.com/)
-Cancel changes
+
 ## 👀 Overview
 ![Overview](/screenshots/sample.gif)
 
